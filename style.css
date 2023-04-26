@@ -1,0 +1,154 @@
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+
+  --Transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+  --Very-light-gray: hsl(0, 0%, 95%);
+
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 860px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-inline: 2rem;
+}
+
+.card {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  background-color: var(--item-color);
+}
+
+.card-title {
+  font-family: "Big Shoulders Display", cursive;
+  font-weight: var(--fw-700);
+  font-size: 2.5rem;
+  color: var(--Very-light-gray);
+}
+
+.description {
+  font-weight: var(--fw-400);
+  color: var(--Transparent-white-paragraphs);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  border: 3px solid transparent;
+  max-width: 160px;
+  color: var(--item-color);
+  margin-top: 2rem;
+  background-color: var(--Very-light-gray);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--item-color);
+  border: 3px solid white;
+  color: white;
+}
+
+.card[data-item-type="card1"] {
+  --item-color: var(--Bright-orange);
+}
+
+.card[data-item-type="card2"] {
+  --item-color: var(--Dark-cyan);
+}
+
+.card[data-item-type="card3"] {
+  --item-color: var(--Very-dark-cyan);
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: auto;
+  }
+  .card {
+    gap: 0.5rem;
+  }
+  body {
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
